@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<style>
+    
+        
+
+        .btn {
+        background-color: transparent;
+        background-repeat: no-repeat;
+        border: none;
+        cursor: pointer;
+        overflow: hidden;
+        outline: none;
+        height: 300px;
+        width: 300px;
+        padding: 0;
+        
+        box-shadow: transparent;
+    }
+</style>
+
+    <div class="bg-image" 
+     style="background-image: url('https://github.com/danielsliepins/pd/blob/main/xconvert.com.png?raw=true');
+            height: 100vh">
+<head>
+  <title>Mining spēle</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  
+    <div class="text-center">
+    <h1>Tava crypto mining istaba </h1>
+
+      </div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+        
+        
+        <div >
+        <h1>Money: <a id="clicks">0</a>$<a</h1>
+        <p>Spied uz picaxe lai sāktu mainot</p> 
+    </div>
+  
+      <h3>Upgrades</h3>
+      <button   id="upg" onclick="upgrade()" type="button" disabled >200$ Lai uzlabotu mining efektivitāti</button>
+      <button   id="help" onclick="auto()" type="button"  disabled>400$ Lai iegādātos auto mining rigu</button>
+    </div>
+    <div class="col-sm-4">
+
+        <button >
+            <img src="https://raw.githubusercontent.com/danielsliepins/pd/53ee7d75947e2ca25e2a683456b083e13ded8ab3/86133d6d-e8f2-4ec5-a5aa-933b6596bdba%20(1).png" 
+             class ="btn" name="btnCount" value="Count" onclick="someFunc()" id="btnCount"  />
+          </button>
+
+    </div>
+    <div class="col-sm-4">
+        <img src="https://raw.githubusercontent.com/danielsliepins/pd/main/image-removebg-preview.png" id="myImage" class="rounded float-left" 
+        width="150" 
+        height="150">
+
+        <img src="" class="rounded float-right"id="crypto" 
+        width="150" 
+        height="150" >
+    </div>
+    <div>
+        <h1>Atlikušās dzīvības <a id="health">0</a><a</h1>
+
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <h3>Crypto koini</h3>
+        <div>
+            <div style="float: left">
+                <img src="https://raw.githubusercontent.com/danielsliepins/pd/907a885e3122ac0978ba836c2ae570937e0fea0a/bitcoin-btc-logo.png"   
+                width="15" 
+                height="15">
+            </div>
+            <div id="Bitcoin">
+                Bitcoin 0
+            </div>
+        </div>
+        <div>
+            <div style="float: left">
+                <img src="https://raw.githubusercontent.com/danielsliepins/pd/907a885e3122ac0978ba836c2ae570937e0fea0a/ethereum-eth-logo.png"  
+                width="15" 
+                height="15">
+            </div>
+            <div id="Ethereum">
+                Ethereum 0
+            </div>
+        </div>
+        <div>
+            <div style="float: left">
+                <img src="https://raw.githubusercontent.com/danielsliepins/pd/907a885e3122ac0978ba836c2ae570937e0fea0a/cardano-ada-logo.png"  
+                width="15" 
+                height="15">
+            </div>
+            <div id="Cardano">
+                Cardano 0
+            </div>
+        </div>
+        <div>
+            <div style="float: left">
+                <img src="https://raw.githubusercontent.com/danielsliepins/pd/907a885e3122ac0978ba836c2ae570937e0fea0a/dogecoin-doge-logo.png"  
+                width="15" 
+                height="15">
+            </div>
+            <div id="Dogecoin" >
+                Doge coin 0
+            </div>
+        </div>
+        <div>
+            <div style="float: left">
+                <img src="https://raw.githubusercontent.com/danielsliepins/pd/907a885e3122ac0978ba836c2ae570937e0fea0a/shiba-inu-shib-logo.png"   
+                width="15" 
+                height="15">
+            </div>
+            <div id="Shibainu">
+                Shiba inu 0
+            </div>
+        </div>
+        <div>
+            <div style="float: left">
+                <img src="https://github.com/danielsliepins/pd/blob/main/DistantHairyAnglerfish-size-re-unscreen.gif?raw=true"   
+                width="15" 
+                height="15">
+            </div>
+            <div id="Solana">
+                Solona 0
+        </div>
+        </div>
+      </div>
+             
+    
+        <img id="gpu" 
+        width="600" 
+        height="270" >
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+
+
+
+<script>
+    
+    var sol = 0;
+    var eth = 0;
+    var car = 0;
+    var btc = 0;
+    var dog = 0;
+    var shi = 0;
+    var durability = [100, 200, 400, 500, 1000, 1500];
+    var bildes = 
+    [
+    "https://github.com/danielsliepins/pd/blob/main/solana-sol-logo.png?raw=true",
+    "https://raw.githubusercontent.com/danielsliepins/pd/907a885e3122ac0978ba836c2ae570937e0fea0a/shiba-inu-shib-logo.png",
+    "https://raw.githubusercontent.com/danielsliepins/pd/907a885e3122ac0978ba836c2ae570937e0fea0a/dogecoin-doge-logo.png",
+    "https://raw.githubusercontent.com/danielsliepins/pd/907a885e3122ac0978ba836c2ae570937e0fea0a/cardano-ada-logo.png",
+    "https://raw.githubusercontent.com/danielsliepins/pd/907a885e3122ac0978ba836c2ae570937e0fea0a/ethereum-eth-logo.png",
+    "https://raw.githubusercontent.com/danielsliepins/pd/907a885e3122ac0978ba836c2ae570937e0fea0a/bitcoin-btc-logo.png"
+    ];
+    var price = 200
+    var clicks = -2;
+    var power = 1;
+    var item_durability = 0;
+    var upg_btn = document.getElementById("upg");
+    var helpbtn = document.getElementById("help");
+    var inverval_timer;
+    var help_price = 400;
+    var speed = 1500
+
+    function disb() 
+
+    {
+        if (clicks >= price)
+        {
+            $(upg_btn).removeAttr("disabled");
+        }
+        else
+        {
+            $(upg_btn).attr('disabled', 'disabled');
+        }
+    }
+
+
+    function disb2() 
+
+    {
+    if (clicks >= help_price)
+    {
+        $(helpbtn).removeAttr("disabled");
+    }
+    else
+    {
+        $(helpbtn).attr('disabled', 'disabled');
+    }
+    }
+        function changeImage() {
+            var image = document.getElementById('myImage');
+            if (image.src.match("https://raw.githubusercontent.com/danielsliepins/pd/main/image-removebg-preview.png")) {
+                image.src = "https://raw.githubusercontent.com/danielsliepins/pd/main/image-removebg-preview%20(1).png";
+            }
+            else {
+                image.src = "https://raw.githubusercontent.com/danielsliepins/pd/main/image-removebg-preview.png";
+            }
+        }
+        
+        function Count() {
+          clicks += power;
+          document.getElementById("clicks").innerHTML = clicks;
+          console.log(power);
+          
+          
+        
+    }
+
+    function upgrade()
+    {
+        
+        document.getElementById("upg").innerHTML = price;
+        clicks = clicks - price;
+        
+        power = power + 1;
+        console.log(power);
+        price = price + 200
+        console.log(price);
+        console.log(clicks)
+    if (clicks < price)
+        {
+            $(upg_btn).attr('disabled', 'disabled');
+        }
+    $("#clicks").html(clicks);
+    var text = price.toString();
+    $("#upg").html(price + "$ Lai uzlabotu mining efektivitāti");  
+    }
+
+    function hit ()
+    {
+    $("#health").html(item_durability);   
+    var r = Math.floor(Math.random() * 6);    
+        item_durability = item_durability - power;
+        
+        //console.log(item_durability);
+        if (item_durability < 1)
+        {
+            
+
+            var text = sol.toString();
+                $("#Solana").html("Solana " + sol);
+            var text = shi.toString();
+                $("#Shibainu").html("Shibainu " + shi); 
+            var text = dog.toString();
+                $("#Dogecoin").html("Dogecoin " + dog);
+            var text = car.toString();
+                $("#Cardano").html("Cardano " + car);
+            var text = eth.toString();
+                $("#Ethereum").html("Ethereum " + eth); 
+            var text = btc.toString();
+                $("#Bitcoin").html("Bitcoin " + btc);
+
+            
+            if (bildes[0] == bildes[r])
+            {
+                console.log("test");
+                sol = sol + 1;
+ 
+            }
+            if (bildes[1] == bildes[r])
+
+            {
+                console.log("test");
+                shi = shi + 1;
+
+            }
+            if (bildes[2] == bildes[r])
+            {
+                console.log("test");
+                dog = dog + 1;
+
+            }
+            if (bildes[3] == bildes[r])
+            {
+                console.log("test");
+                car = car + 1;
+       
+            }
+            if (bildes[4] == bildes[r])
+            {
+                console.log("test");
+                eth = eth + 1;
+   
+            }
+            if (bildes[5] == bildes[r])
+            {
+                console.log("test");
+                btc = btc + 1;
+    
+            }
+
+
+            document.getElementById("crypto").src=bildes[r];
+            item_durability = durability[r];
+
+        }
+         
+    }
+
+    function auto()
+    {   
+        document.getElementById("gpu").src="https://github.com/danielsliepins/pd/blob/main/DistantHairyAnglerfish-size-re-unscreen.gif?raw=true";
+        document.getElementById("help").innerHTML = help_price;
+        $("#clicks").html(clicks); 
+        
+        help_price = help_price + 600;
+        if (clicks < help_price)
+        {
+            $(helpbtn).attr('disabled', 'disabled');
+        }    
+
+
+        
+        const myFunction = () => 
+        {$("#clicks").html(clicks);
+            clicks = clicks + 1;
+            
+        };
+    var text = help_price.toString();
+    $("#help").html(help_price + "$ Lai iegādātos auto mining rigu");
+    setInterval(myFunction, speed); 
+
+    speed = speed / 1,2;
+    
+    }
+
+    
+    function someFunc()
+    { 
+      Count();
+      changeImage();
+      hit ();
+      disb();
+      disb2();
+    }
+
+    
+   
+</script>
